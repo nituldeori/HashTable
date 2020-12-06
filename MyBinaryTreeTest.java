@@ -23,6 +23,7 @@ public class MyBinaryTreeTest {
         myBinaryTree.add(63);
         myBinaryTree.add(67);
         int size = myBinaryTree.getSize();
+        myBinaryTree.search(myBinaryTree.getRoot(),63);
         Assert.assertEquals(13, size);
     }
 

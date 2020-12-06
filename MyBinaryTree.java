@@ -7,6 +7,10 @@ public class MyBinaryTree<K extends Comparable<K>> {
         this.root = this.addRecursively(root, key);
     }
 
+    public MyBinaryNode<K> getRoot(){
+        return root;
+    }
+
     private MyBinaryNode<K> addRecursively(MyBinaryNode<K> current, K key) {
         if (current == null)
             return new MyBinaryNode<>(key);
@@ -27,4 +31,16 @@ public class MyBinaryTree<K extends Comparable<K>> {
     private int getSizeRecursive(MyBinaryNode<K> current) {
         return current == null ? 0 : 1 + this.getSizeRecursive(current.left) + this.getSizeRecursive(current.right);
     }
+
+    public void search(MyBinaryNode<K> node, K key){
+        if(node==null)
+            System.out.println("Tree is empty");
+        if(node.getKey()==key)
+            System.out.println("Found node with key: "+key);
+        else if(key.compareTo(node.getKey())<0){
+            search(node.getLeft(),key);
+        }
+        else search(node.getRight(),key);
+    }
+
 }

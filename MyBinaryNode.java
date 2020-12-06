@@ -10,4 +10,15 @@ public class MyBinaryNode<K extends Comparable<K>>{
         this.left=null;
         this.right=null;
     }
+
+    public K getKey(){
+        return key;
+    }
+    public MyBinaryNode<K> getLeft(){
+        return left;
+    }
+    public MyBinaryNode<K> getRight(){
+        return right;
+    }
+
 }
